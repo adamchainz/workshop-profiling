@@ -15,9 +15,14 @@ def instrument(func: Func) -> Func:
     @functools.wraps(func)
     def wrapper(*args: object, **kwargs: object) -> object:
         start = time.perf_counter_ns()
+
         result = func(*args, **kwargs)
+
+        # TODO: also print the number of allocated blocks with
+        # sys.getallocatedblocks() before/after
         duration = (time.perf_counter_ns() - start) / 1e9
         print(f"{func.__name__}(): {duration:.4f}s")
+
         return result
 
     return cast(Func, wrapper)
