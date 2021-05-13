@@ -5,6 +5,9 @@ import time
 from types import FrameType
 
 
+# Our app
+
+
 def main() -> None:
     log("Starting main()")
     pause(0.25)
@@ -37,7 +40,7 @@ def tracer(frame: FrameType, event: str, arg: object) -> None:
         function_name = frame.f_code.co_name
 
         # TODO: ignore calls to log()
-        print(f"{function_name}() took {duration:.04f} seconds")
+        print(f"{function_name}(): {duration:.04f}s")
 
 
 # Call app with profiler

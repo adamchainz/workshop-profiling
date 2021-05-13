@@ -5,6 +5,9 @@ import threading
 import time
 
 
+# Our app
+
+
 def main() -> None:
     log("Starting main()")
     pause(0.25)
@@ -35,11 +38,11 @@ def profiler() -> None:
         time.sleep(0.1)
 
         frame = sys._current_frames()[main_thread_id]
-        now = (time.perf_counter_ns() - start) / 1e9
+        duration = (time.perf_counter_ns() - start) / 1e9
 
         # TODO: print caller function name too
         function_name = frame.f_code.co_name
-        print(f"{now:.4f}s: {function_name}()")
+        print(f"{function_name}(): {duration:.4f}s")
 
 
 # Call app with profiler running

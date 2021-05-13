@@ -5,6 +5,8 @@ from __future__ import annotations
 import sys
 import time
 
+# Our mini-profiler
+
 last_import_module = None
 last_import_now = None
 
@@ -31,7 +33,7 @@ def log_import_audit_hook(event: str, args: tuple[str, ...]) -> None:
 
 sys.addaudithook(log_import_audit_hook)
 
-# Application imports
+# Our app’s imports
 
 import datetime  # noqa
 import html.parser  # noqa
