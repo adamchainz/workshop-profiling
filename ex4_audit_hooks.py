@@ -31,7 +31,8 @@ def log_import_audit_hook(event: str, args: tuple[str, ...]) -> None:
     last_import_now = now
 
 
-sys.addaudithook(log_import_audit_hook)
+if __name__ == "__main__":
+    sys.addaudithook(log_import_audit_hook)
 
 # Our app’s imports
 
@@ -41,4 +42,5 @@ import json  # noqa
 
 # Show final import
 
-log_import_audit_hook("import", ("dummy",))
+if __name__ == "__main__":
+    log_import_audit_hook("import", ("dummy",))

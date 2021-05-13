@@ -47,7 +47,8 @@ def profiler() -> None:
 
 # Call app with profiler running
 
-thread = threading.Thread(target=profiler, daemon=True)
-thread.start()
+if __name__ == "__main__":
+    thread = threading.Thread(target=profiler, daemon=True)
+    thread.start()
 
-main()
+    main()

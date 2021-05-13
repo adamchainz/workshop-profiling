@@ -45,6 +45,7 @@ def tracer(frame: FrameType, event: str, arg: object) -> None:
 
 # Call app with profiler
 
-sys.setprofile(tracer)
-main()
-sys.setprofile(None)
+if __name__ == "__main__":
+    sys.setprofile(tracer)
+    main()
+    sys.setprofile(None)

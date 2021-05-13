@@ -53,4 +53,5 @@ def pause(n: float) -> None:
     time.sleep(n)
 
 
-main()
+if __name__ == "__main__":
+    main()
