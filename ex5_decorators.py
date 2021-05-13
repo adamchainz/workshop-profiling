@@ -6,29 +6,25 @@ from collections.abc import Callable
 from typing import Any, TypeVar, cast
 
 
-# Our profiling
+# Our mini-profiler
 
 Func = TypeVar("Func", bound=Callable[..., Any])
 
 
-def instrument(func: Func) -> Func:
+def instrument(func: Func) -> Func:  # decorator
     @functools.wraps(func)
     def wrapper(*args: object, **kwargs: object) -> object:
-        start = time.perf_counter_ns()
-
         result = func(*args, **kwargs)
 
-        # TODO: also print the number of allocated blocks with
-        # sys.getallocatedblocks() before/after
-        duration = (time.perf_counter_ns() - start) / 1e9
-        print(f"{func.__name__}(): {duration:.4f}s")
+        # TODO: also print the duration by comparing start and end times
+        print(f"{func.__name__}()")
 
         return result
 
     return cast(Func, wrapper)
 
 
-time.sleep = instrument(time.sleep)
+time.sleep = instrument(time.sleep)  # monkey patch
 
 
 # Our app

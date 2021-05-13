@@ -42,6 +42,7 @@ def profiler() -> None:
 
         # TODO: print caller function name too
         function_name = frame.f_code.co_name
+        del frame
         print(f"{function_name}(): {duration:.4f}s")
 
 

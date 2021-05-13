@@ -7,8 +7,8 @@ import time
 
 # Our mini-profiler
 
-last_import_module = None
-last_import_now = None
+last_import_module: str | None = None
+last_import_now: int | None = None
 
 
 def log_import_audit_hook(event: str, args: tuple[str, ...]) -> None:

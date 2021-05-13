@@ -28,7 +28,7 @@ def pause(n: float) -> None:
 
 # Our mini-profiler
 
-starts = []
+starts: list[int] = []
 
 
 def tracer(frame: FrameType, event: str, arg: object) -> None:
