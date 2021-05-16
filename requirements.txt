@@ -35,7 +35,9 @@ ipdb==0.13.7
 ipython-genutils==0.2.0
     # via traitlets
 ipython==7.23.1
-    # via ipdb
+    # via
+    #   -r requirements.in
+    #   ipdb
 jedi==0.18.0
     # via ipython
 matplotlib-inline==0.1.2

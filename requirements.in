@@ -1,6 +1,7 @@
 django
 django-debug-toolbar
 ipdb
+ipython
 py-spy
 scout-apm
 yelp-gprof2dot
