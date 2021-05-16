@@ -7,13 +7,29 @@
 appnope==0.1.2
     # via ipython
 asgiref==3.3.4
-    # via django
+    # via
+    #   django
+    #   scout-apm
 backcall==0.2.0
     # via ipython
+certifi==2020.12.5
+    # via urllib3
+cffi==1.14.5
+    # via cryptography
+cryptography==3.4.7
+    # via
+    #   pyopenssl
+    #   urllib3
 decorator==5.0.7
     # via ipython
-django==3.2.3
+django-debug-toolbar==3.2.1
     # via -r requirements.in
+django==3.2.3
+    # via
+    #   -r requirements.in
+    #   django-debug-toolbar
+idna==3.1
+    # via urllib3
 ipdb==0.13.7
     # via -r requirements.in
 ipython-genutils==0.2.0
@@ -32,24 +48,40 @@ pickleshare==0.7.5
     # via ipython
 prompt-toolkit==3.0.18
     # via ipython
+psutil==5.8.0
+    # via scout-apm
 ptyprocess==0.7.0
     # via pexpect
 py-spy==0.3.6
     # via -r requirements.in
+pycparser==2.20
+    # via cffi
 pygments==2.9.0
     # via ipython
+pyopenssl==20.0.1
+    # via urllib3
 pytz==2021.1
     # via django
+scout-apm==2.19.0
+    # via -r requirements.in
+six==1.16.0
+    # via pyopenssl
 sqlparse==0.4.1
-    # via django
+    # via
+    #   django
+    #   django-debug-toolbar
 toml==0.10.2
     # via ipdb
 traitlets==5.0.5
     # via
     #   ipython
     #   matplotlib-inline
+urllib3[secure]==1.26.4
+    # via scout-apm
 wcwidth==0.2.5
     # via prompt-toolkit
+wrapt==1.12.1
+    # via scout-apm
 yelp-gprof2dot==1.2.0
     # via -r requirements.in
 
